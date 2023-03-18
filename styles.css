@@ -1,0 +1,136 @@
+:root {
+    /* Primary */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+    --main-very-dark-blue: hsl(217, 54%, 11%);
+    --card-very-dark-blue: hsl(216, 50%, 16%);
+    --line-very-dark-blue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+}
+
+main {
+    width: 21.5rem;
+    background-color: var(--card-very-dark-blue);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 1.5rem;
+    box-shadow: 0 24px 24px 12px hsl(215, 55%, 6%);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.card-image {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--cyan);
+    border-radius: 12px;
+    background-image: url(images/icon-view.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-image:hover .overlay {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.card-info h2 {
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.card-info h2:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.card-desc {
+    color: var(--soft-blue);
+    font-weight: 300;
+}
+
+.card-price-display {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+.card-price {
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-days {
+    color: var(--soft-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+hr {
+    margin: 0;
+    color: var(--line-very-dark-blue);
+}
+
+.card-creator {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--soft-blue);
+    font-size: 1rem;
+}
+
+.card-creator img {
+    width: 2rem;
+    height: auto;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.card-creator span {
+    color: var(--white);
+}
+
+.card-creator span:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
